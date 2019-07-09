@@ -2,7 +2,7 @@
   "name": "week1-pomodoro",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://xxx.github.io/theApp",
+  "homepage": "https://vicky2490.github.io/pomodoroTechnique",
   "dependencies": {
     "material-design-icons": "^3.0.1",
     "react": "^16.8.6",
