@@ -3,23 +3,19 @@ import './App.css';
 
 function App() {
   return (
-    // <div className="wrap">
-    <div className="flex-container">
-      <div className="left-content">
-      </div>
- 
+    <div className="flex wrap">
+      <div className="left-content"></div>
       <div className="right-content">
-        <div className="outside-circle">
-        <div className="middle-circle">
-          <div className="work-circle">
-            <div className="material-icons play-arrow">play_arrow</div>
+        <div className="outside-circle flex">
+          <div className="middle-circle flex">
+            <div className="flex">
+              <i className="material-icons play-arrow play-arrow-size">play_circle_filled</i>
+              <div className="little-circle"></div>
+            </div>
           </div>
-          <div className="little-circle"></div>
-        </div>
         </div>
       </div>
     </div>
-    // </div>
   );
 }
 
