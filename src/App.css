@@ -6,9 +6,23 @@
 
 .flex {
   display: flex;
-  /* outline: 10px solid yellow; */
+  /* outline: 1px solid yellow; */
   align-items:center;
   justify-content:center;
+}
+
+.outside-box {
+  position: absolute;
+  right: 180px;
+  width: 540px;
+  height: 800px;
+}
+
+.outside-flex-size {
+  /* outline: 10px solid orange; */
+  display: flex;
+  width: 540px;
+  height: 800px;
 }
 
 .left-content {
@@ -20,15 +34,13 @@
 .right-content {
   width: 450px;
   height: 800px;
- background-color: #003164;
+  background-color: #003164;
 }
 
 .outside-circle {
   width: 540px;
   height: 540px;
   border-radius: 50%;
-  margin-left: -280px;
-  margin-top: 33.33%;
   border: 10px solid #FF4384;
 }
 
@@ -44,7 +56,9 @@
   font-size: 96px;
 }
 
-.play-arrow-size {
+.play-arrow-relative {
+  position: relative;
+  /* outline: 2px solid green; */
   height: 96px;
   width: 96px;
 }
@@ -54,5 +68,44 @@
   height: 24px;
   background-color: white;
   border: 5px solid #FF4384;
-  align-self: flex-end;
+  position: absolute;
+  bottom: 4px;
+  right: -25px;
+}
+
+.menu-list {
+  width: 36px;
+  height: 252px;
+  position: absolute;
+  right: 85px;
+  top: 48px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+}
+
+.menu-relative {
+  position: relative;
+  width: 450px;
+  height: 800px;
+}
+
+.menu-icon {
+  font-size: 36px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.slogan {
+  width: 165px;
+  height: 31px;
+  position: absolute;
+  right: 25px;
+  bottom: 110px;
+  color: white;
+  font-family: Futura;
+  font-size: 24px;
+  font-weight: bold;
+  /* outline: 2px solid green; */
+  transform:rotate(90deg);
+
 }
