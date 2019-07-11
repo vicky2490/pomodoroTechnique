@@ -11,9 +11,7 @@ function App() {
           <div className="outside-circle flex">
             <div className="middle-circle flex">
               <div className="play-arrow-relative">
-                {/* <div className="flex"> */}
-                  <i className="material-icons play-arrow">play_circle_filled</i>
-                {/* </div> */}
+                <i className="material-icons play-arrow">play_circle_filled</i>
                 <div className="little-circle"></div>
               </div>
             </div>
@@ -22,14 +20,12 @@ function App() {
       </div>
 
       <div className="right-content">
-        <div className="menu-relative">
-          <div className="menu-list">
-            <i className="material-icons menu-icon">list</i>
-            <i className="material-icons menu-icon">insert_chart_outlined</i>
-            <i className="material-icons menu-icon">library_music</i>
-          </div>
-          <div className="slogan">POMODORO</div>
+        <div className="menu-list">
+          <i className="material-icons menu-icon">list</i>
+          <i className="material-icons menu-icon">insert_chart_outlined</i>
+          <i className="material-icons menu-icon">library_music</i>
         </div>
+        <div className="slogan">POMODORO</div>
       </div>
     </div>
   );

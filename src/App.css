@@ -2,11 +2,12 @@
   width: 1280px;
   height: auto;
   margin: 0 auto;
+  position: relative;
 }
 
 .flex {
   display: flex;
-  /* outline: 1px solid yellow; */
+  /* outline: 5px solid yellow; */
   align-items:center;
   justify-content:center;
 }
@@ -35,6 +36,11 @@
   width: 450px;
   height: 800px;
   background-color: #003164;
+  padding: 48px 85px 48px 0; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* outline: 2px solid green; */
 }
 
 .outside-circle {
@@ -75,19 +81,10 @@
 
 .menu-list {
   width: 36px;
-  height: 252px;
-  position: absolute;
-  right: 85px;
-  top: 48px;
+  height: 204px;
   display: flex;
   flex-direction: column; 
   justify-content: space-between;
-}
-
-.menu-relative {
-  position: relative;
-  width: 450px;
-  height: 800px;
 }
 
 .menu-icon {
@@ -96,16 +93,15 @@
 }
 
 .slogan {
-  width: 165px;
+  width: 31px;
   height: 31px;
-  position: absolute;
-  right: 25px;
-  bottom: 110px;
   color: white;
   font-family: Futura;
   font-size: 24px;
   font-weight: bold;
   /* outline: 2px solid green; */
   transform:rotate(90deg);
-
+  display: flex;
+  transform-origin: 12px 12px;
+  margin-top: 335px;
 }
