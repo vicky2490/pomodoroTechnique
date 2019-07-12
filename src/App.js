@@ -8,7 +8,6 @@ class App extends Component {
     super();
     this.state = {
       remindTime: 1500,
-      endDate: moment(),
       startCountDown: false,
     } 
   }
@@ -18,13 +17,13 @@ class App extends Component {
   countDown = (second) => {
     this.setState({
       remindTime: second,
-      endDate: moment().add(second, 'second'),
       startCountDown: true,
     });
     clearInterval(this.interval);
     this.interval = setInterval(() => {
+      let time = this.state.remindTime - 1;
       this.setState({
-        remindTime: this.state.remindTime -= 1,
+        remindTime: time,
       });
       if (this.state.remindTime <= 0) {
         clearInterval(this.interval);
