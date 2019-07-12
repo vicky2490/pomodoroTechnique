@@ -202,9 +202,19 @@
   border-radius: 50%;
 }
 
+.middle-circle-white {
+  background-color: white;
+  border: 4px solid #FF4384;
+}
+
 .play-arrow {
   color: rgba(255, 255, 255, 1);
   font-size: 96px;
+}
+
+.on-pause {
+  font-size: 96px;
+  color: #FF4384;
 }
 
 .play-arrow-relative {
@@ -222,6 +232,11 @@
   position: absolute;
   bottom: 4px;
   right: -25px;
+}
+
+.little-circle-on-pause {
+  background-color: #FF4384;
+  border: 5px solid white;
 }
 
 .menu-list {

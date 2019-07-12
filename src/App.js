@@ -1,7 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import moment from 'moment';
 
-function App() {
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      remindTime: 1500,
+      endDate: moment(),
+      startCountDown: false,
+    } 
+  }
+
+  interval = undefined;
+
+  countDown = (second) => {
+    this.setState({
+      remindTime: second,
+      endDate: moment().add(second, 'second'),
+      startCountDown: true,
+    });
+    clearInterval(this.interval);
+    this.interval = setInterval(() => {
+      this.setState({
+        remindTime: this.state.remindTime -= 1,
+      });
+      if (this.state.remindTime <= 0) {
+        clearInterval(this.interval);
+      }
+    }, 1000);
+  }
+
+  showTime = () => {
+    const timer = moment()
+      .startOf('day')
+      .add(this.state.remindTime, 'second');
+    return timer.format('mm:ss');
+  }
+
+  countDownPause = () => {
+    this.interval && clearInterval(this.interval);
+    this.setState({
+      startCountDown: false,
+    });
+  }
+
+
+render() {
+
   return (
     <div className="flex wrap">
 
@@ -18,23 +65,23 @@ function App() {
               <div className="circle-progress"></div>
             </div>
           </div>
-          <div className="time">25:00</div>
+          <div className="time">{this.showTime()}</div>
         </div>
         <div className="mission-list">
           <div className="mission">
             <div className="mission-circle"></div>
             <div className="mission-title">THE SECOND THING TO DO TODAY</div>
-            <i class="material-icons">play_circle_outline</i>
+            <i className="material-icons">play_circle_outline</i>
           </div>
           <div className="mission">
             <div className="mission-circle"></div>
             <div className="mission-title">THE THIRD THING TO DO TODAY</div>
-            <i class="material-icons">play_circle_outline</i>
+            <i className="material-icons">play_circle_outline</i>
           </div>
           <div className="mission mission-more-margin">
             <div className="mission-circle"></div>
             <div className="mission-title">THE FORTH THING TO DO TODAY</div>
-            <i class="material-icons">play_circle_outline</i>
+            <i className="material-icons">play_circle_outline</i>
           </div>
           <div className="more">MORE</div>
         </div>
@@ -43,10 +90,15 @@ function App() {
       <div className="outside-box">
         <div className="flex outside-flex-size">
           <div className="outside-circle flex">
-            <div className="middle-circle flex">
+            <div className={(!this.state.startCountDown) ? "middle-circle flex" : "middle-circle middle-circle-white flex"}>
               <div className="play-arrow-relative">
-                <i className="material-icons play-arrow">play_circle_filled</i>
-                <div className="little-circle"></div>
+               {
+                 (!this.state.startCountDown) ?
+                 <i className="material-icons play-arrow" onClick={()=>this.countDown(this.state.remindTime)}>play_circle_filled </i> 
+                 :
+                 <i className="material-icons on-pause" onClick={()=>this.countDownPause()}>pause_circle_filled</i> 
+               }
+                <div className={(!this.state.startCountDown) ? "little-circle" : "little-circle little-circle-on-pause"}></div>
               </div>
             </div>
           </div>
@@ -62,7 +114,8 @@ function App() {
         <div className="slogan">POMODORO</div>
       </div>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
