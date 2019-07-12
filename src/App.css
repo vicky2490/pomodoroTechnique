@@ -30,6 +30,151 @@
   width: 830px;
   height: 800px;
   background-color: #FFEDF7;
+  padding: 48px 0px 48px 85px; 
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-misson-box {
+  display: flex;
+  justify-content: flex-start;
+  padding: 19px 16px;
+  width: 445px;
+  height: 56px;
+  background-color: white;
+}
+
+.mission-input {
+  background-color: white; 
+  width: 389px;
+  height: 24px;
+  color: #FF4384;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 19px;
+  border: none;
+}
+
+::placeholder {
+  color: #FF4384;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.add-misson-box button {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  color: #FF4384;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.middle-box {
+  display: flex;
+  justify-content: flex-start;
+  height: 220px;
+  flex-wrap: wrap;
+  width: 454px;
+  /* outline: 2px solid green; */
+}
+
+.left-circle {
+  margin-right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #003164;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  color: #003164;
+  font-size: 24px;
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 28px;
+  /* outline: 2px solid orange; */
+}
+
+.circle-progress-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle-progress {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #FF4384;
+}
+
+.time {
+  width: 454px;
+  height: 206px;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 170px;
+  text-align: center;
+  line-height: 176px;
+  color: #FF4384;
+  /* outline: 2px solid yellow; */
+}
+
+.mission-list {
+  display: flex;
+  flex-direction: column;
+  width: 445px;
+  /* outline: 2px solid green; */
+}
+
+.mission {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(0, 49, 100, 0.2);
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  /* outline: 2px solid yellow; */
+}
+
+.mission-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #003164;
+  margin-right: 4px;
+}
+
+.mission-title {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #003164;
+  margin-right: auto;
+}
+
+.mission-more-margin {
+  margin-bottom: 9px;
+}
+
+.more {
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FF4384;
+  text-align: right;
 }
 
 .right-content {
@@ -47,7 +192,7 @@
   width: 540px;
   height: 540px;
   border-radius: 50%;
-  border: 10px solid #FF4384;
+  border: 4px solid #FF4384;
 }
 
 .middle-circle {
