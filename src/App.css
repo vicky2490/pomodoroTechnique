@@ -200,6 +200,7 @@
   height: 500px;
   background-color: #FF4384;
   border-radius: 50%;
+  position: absolute;
 }
 
 .middle-circle-white {

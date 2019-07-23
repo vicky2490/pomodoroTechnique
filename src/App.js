@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import moment from 'moment';
+import {Layer,Stage,Arc} from 'react-konva';
 
 class App extends Component {
 
@@ -9,6 +10,7 @@ class App extends Component {
     this.state = {
       remindTime: 1500,
       startCountDown: false,
+      angle: 0,
     } 
   }
 
@@ -22,8 +24,10 @@ class App extends Component {
     clearInterval(this.interval);
     this.interval = setInterval(() => {
       let time = this.state.remindTime - 1;
+      let setAngle = this.state.angle + 0.24;
       this.setState({
         remindTime: time,
+        angle: setAngle,
       });
       if (this.state.remindTime <= 0) {
         clearInterval(this.interval);
@@ -89,6 +93,21 @@ render() {
       <div className="outside-box">
         <div className="flex outside-flex-size">
           <div className="outside-circle flex">
+            
+            <Stage width={540} height={540}>
+              <Layer>
+                <Arc
+                  x={270} y={270}
+                  innerRadius={0}
+                  outerRadius={270}
+                  strokeWidth={0}
+                  angle={this.state.angle}
+                  rotationDeg={-90}
+                  fill='#FF4384'
+                  stroke={'#FF4384'}
+                />
+              </Layer>
+            </Stage>
             <div className={(!this.state.startCountDown) ? "middle-circle flex" : "middle-circle middle-circle-white flex"}>
               <div className="play-arrow-relative">
                {
