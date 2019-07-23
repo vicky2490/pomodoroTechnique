@@ -65,7 +65,21 @@ render() {
           <div className="right-side">
             <div className="title">THE FIRST THING TO DO TODAY</div>
             <div className="circle-progress-bar">
-              <div className="circle-progress"></div>
+            <Stage width={12} height={12}>
+              <Layer>
+                <Arc
+                  x={6} y={6}
+                  innerRadius={0}
+                  outerRadius={6}
+                  strokeWidth={0}
+                  angle={this.state.angle}
+                  rotationDeg={-90}
+                  fill='#FF4384'
+                  stroke={'#FF4384'}
+                />
+              </Layer>
+            </Stage>
+            <div className="circle-progress"></div>           
             </div>
           </div>
           <div className="time">{this.showTime()}</div>
